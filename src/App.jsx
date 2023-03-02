@@ -12,7 +12,7 @@ import { getCartThunk } from "./store/slices/cart.slice";
 import ProtectedRoutes from "./pages/ProtectedRoutes";
 import CartPage from "./pages/CartPage";
 import Purchases from "./pages/Purchases";
-import Footer from "./components/shared/footer";
+import Footer from "./components/shared/Footer";
 
 function App() {
   const dispatch = useDispatch();
