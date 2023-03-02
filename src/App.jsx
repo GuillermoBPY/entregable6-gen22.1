@@ -12,6 +12,7 @@ import { getCartThunk } from "./store/slices/cart.slice";
 import ProtectedRoutes from "./pages/ProtectedRoutes";
 import CartPage from "./pages/CartPage";
 import Purchases from "./pages/Purchases";
+import Footer from "./components/shared/footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function App() {
           <Route path="/purchases" element={<Purchases />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
