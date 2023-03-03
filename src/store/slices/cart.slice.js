@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import config from "./getConfig";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -13,7 +12,7 @@ const cartSlice = createSlice({
 export const { setCart } = cartSlice.actions;
 export default cartSlice.reducer;
 
-export const getCartThunk = () => (dispatch) => {
+export const getCartThunk = (config) => (dispatch) => {
   if (localStorage.getItem("token")) {
     const url = "https://e-commerce-api-v2.academlo.tech/api/v1/cart";
 

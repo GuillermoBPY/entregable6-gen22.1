@@ -4,6 +4,7 @@ import CartItem from "../components/CartPages/CartItem";
 import LoadingPage from "../components/shared/LoadingPage";
 import "./styles/CartPage.css";
 import { purchaseCartThunk } from "../utils/purchaseCartThunk";
+import { getCartThunk } from "../store/slices/cart.slice";
 
 const CartPage = () => {
   const [totalAmount, settotalAmount] = useState(0);
@@ -25,7 +26,19 @@ const CartPage = () => {
     dispatch(purchaseCartThunk());
   };
 
-  console.log(cart)
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+
+  useEffect(() => {
+    if (cart === null) {
+      dispatch(getCartThunk(config));
+    }
+  });
+
+  console.log(cart);
   if (!cart) {
     return <LoadingPage />;
   } else {
