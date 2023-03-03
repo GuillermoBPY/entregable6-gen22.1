@@ -37,8 +37,6 @@ const CartPage = () => {
       dispatch(getCartThunk(config));
     }
   });
-
-  console.log(cart);
   if (!cart) {
     return <LoadingPage />;
   } else {
