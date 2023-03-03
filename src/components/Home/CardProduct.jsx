@@ -24,7 +24,7 @@ const CardProduct = ({ product }) => {
 
   const handleBtnClick = (e) => {
     e.preventDefault();
-    if (!cartItemID && cart) {
+    if (!cartItemID && cart && localStorage.getItem("token")) {
       dispatch(addCartItemThunk(product.id));
     } else if (cart && localStorage.getItem("token")) {
       dispatch(updateCartQtyThunk(cartItemID, 1, cartItemQty));
