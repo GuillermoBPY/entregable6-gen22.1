@@ -5,6 +5,7 @@ import config from "../store/slices/getConfig";
 
 export const purchaseCartThunk = () => (dispatch) => {
   Swal.fire({
+    scrollbarPadding: false,
     title: "Check Out Ho!",
     text: "Do you want to check out your cart?",
     icon: "question",

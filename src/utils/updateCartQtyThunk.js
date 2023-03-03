@@ -15,6 +15,7 @@ export const updateCartQtyThunk =
       .then((res) => {
         res;
         Swal.fire({
+          scrollbarPadding: false,
           icon: "success",
           title: "The product has been updated",
           showConfirmButton: false,

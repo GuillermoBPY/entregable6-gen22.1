@@ -25,6 +25,7 @@ const CartPage = () => {
     dispatch(purchaseCartThunk());
   };
 
+  console.log(cart)
   if (!cart) {
     return <LoadingPage />;
   } else {

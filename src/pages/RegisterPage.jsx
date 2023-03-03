@@ -20,6 +20,7 @@ const RegisterPage = () => {
       .then((res) => {
         res.data;
         Swal.fire({
+          scrollbarPadding: false,
           icon: "success",
           title: `User ${res.data.firstName} ${res.data.lastName} was created successfully. Please login to continue`,
         });

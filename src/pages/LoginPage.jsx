@@ -23,6 +23,7 @@ const LoginPage = () => {
       .catch((err) => {
         err;
         Swal.fire({
+          scrollbarPadding: false,
           icon: "error",
           title: "Oops...",
           text: "Something went wrong! Please make sure that the data entered is correct.",

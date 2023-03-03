@@ -5,6 +5,7 @@ import config from "../store/slices/getConfig";
 
 export const deleteCartItemThunk = (id) => (dispatch) => {
   Swal.fire({
+    scrollbarPadding: false,
     title: "Are you sure?",
     text: "Do you want to remove this product from your cart?",
     icon: "warning",

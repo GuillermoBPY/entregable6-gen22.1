@@ -14,6 +14,7 @@ export const addCartItemThunk = (id, counter) => (dispatch) => {
     .then((res) => {
       res;
       Swal.fire({
+        scrollbarPadding: false,
         icon: "success",
         title: "The product has been added to the cart",
         showConfirmButton: false,

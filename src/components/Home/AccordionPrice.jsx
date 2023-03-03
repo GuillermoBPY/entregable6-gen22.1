@@ -8,6 +8,7 @@ const AccordionPrice = ({ setIsActivePrice, isActivePrice, setfromto }) => {
     const priceto = Number(e.target.priceto.value.trim());
     if (pricefrom > priceto && priceto !== 0) {
       Swal.fire({
+        scrollbarPadding: false,
         icon: "error",
         title: "Oops...",
         html: "The price <b>From</b> must be lower than price <b>To</b>",
