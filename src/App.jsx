@@ -19,15 +19,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getAllProductsThunk());
-  }, []);
-
-  useEffect(() => {
-    const config = {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    };
-    dispatch(getCartThunk(config));
+    dispatch(getCartThunk());
   }, []);
 
   return (
