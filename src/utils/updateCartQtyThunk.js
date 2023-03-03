@@ -13,7 +13,7 @@ export const updateCartQtyThunk =
     axios
       .put(url, data, config)
       .then((res) => {
-        console.log(res);
+        res;
         Swal.fire({
           icon: "success",
           title: "The product has been updated",
@@ -22,5 +22,5 @@ export const updateCartQtyThunk =
         });
         dispatch(getCartThunk());
       })
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   };

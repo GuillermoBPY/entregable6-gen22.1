@@ -18,5 +18,5 @@ export const getAllProductsThunk = () => (dispatch) => {
   axios
     .get(url)
     .then((res) => dispatch(setProducts(res.data)))
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };

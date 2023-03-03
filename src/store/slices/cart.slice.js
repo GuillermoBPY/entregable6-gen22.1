@@ -20,6 +20,6 @@ export const getCartThunk = () => (dispatch) => {
     axios
       .get(url, config)
       .then((res) => dispatch(setCart(res.data)))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   }
 };

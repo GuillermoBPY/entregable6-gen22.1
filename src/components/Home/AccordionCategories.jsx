@@ -14,7 +14,7 @@ const AccordionCategories = ({
     axios
       .get(url)
       .then((res) => setcategories(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   };
   const getProductsByName = (data = "title=") => {
     const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products?${data}`;
@@ -22,7 +22,7 @@ const AccordionCategories = ({
     axios
       .get(url)
       .then((res) => setfilteredProducts(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   };
 
   const handleClick = (categoryId) => {

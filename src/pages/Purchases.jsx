@@ -13,7 +13,7 @@ const Purchases = () => {
     axios
       .get(url, config)
       .then((res) => setpurchases(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   };
   useEffect(getPurchases, []);
   if (!purchases) {

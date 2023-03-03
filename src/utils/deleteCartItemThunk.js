@@ -18,7 +18,7 @@ export const deleteCartItemThunk = (id) => (dispatch) => {
       axios
         .delete(url, config)
         .then((res) => {
-          console.log(res);
+          res;
           Swal.fire(
             "Removed!",
             "The product has been removed from the cart.",
@@ -26,7 +26,7 @@ export const deleteCartItemThunk = (id) => (dispatch) => {
           );
           dispatch(getCartThunk());
         })
-        .catch((err) => console.log(err));
+        .catch((err) => err);
     }
   });
 };

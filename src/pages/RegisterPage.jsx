@@ -18,14 +18,14 @@ const RegisterPage = () => {
     axios
       .post(url, data)
       .then((res) => {
-        console.log(res.data);
+        res.data;
         Swal.fire({
           icon: "success",
           title: `User ${res.data.firstName} ${res.data.lastName} was created successfully. Please login to continue`,
         });
         navigate("/user/login");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => err);
     reset(defaultValues);
   };
 

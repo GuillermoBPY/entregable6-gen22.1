@@ -24,7 +24,7 @@ const Home = () => {
     axios
       .get(url)
       .then((res) => setfilteredProducts(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   };
 
   const handleSubmit = (e) => {

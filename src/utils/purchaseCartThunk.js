@@ -18,7 +18,7 @@ export const purchaseCartThunk = () => (dispatch) => {
       axios
         .post(url, {}, config)
         .then((res) => {
-          console.log(res);
+          res;
           Swal.fire(
             "Thank you for your purchase!",
             "We hope you enjoyed your shopping experience with us.",
@@ -26,7 +26,7 @@ export const purchaseCartThunk = () => (dispatch) => {
           );
           dispatch(getCartThunk());
         })
-        .catch((err) => console.log(err));
+        .catch((err) => err);
     }
   });
 };

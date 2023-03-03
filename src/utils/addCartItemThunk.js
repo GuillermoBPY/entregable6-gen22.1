@@ -12,7 +12,7 @@ export const addCartItemThunk = (id, counter) => (dispatch) => {
   axios
     .post(url, data, config)
     .then((res) => {
-      console.log(res);
+      res;
       Swal.fire({
         icon: "success",
         title: "The product has been added to the cart",
@@ -21,5 +21,5 @@ export const addCartItemThunk = (id, counter) => (dispatch) => {
       });
       dispatch(getCartThunk());
     })
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };

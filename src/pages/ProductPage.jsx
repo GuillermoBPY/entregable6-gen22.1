@@ -16,7 +16,7 @@ const ProductPage = () => {
     axios
       .get(url)
       .then((res) => setproduct(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   }, [id]);
   if (!product) {
     return <LoadingPage />;

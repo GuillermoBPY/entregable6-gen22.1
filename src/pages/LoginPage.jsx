@@ -15,13 +15,13 @@ const LoginPage = () => {
     axios
       .post(url, data)
       .then((res) => {
-        console.log(res);
+        res;
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
         reset(defaultValues);
       })
       .catch((err) => {
-        console.log(err);
+        err;
         Swal.fire({
           icon: "error",
           title: "Oops...",
