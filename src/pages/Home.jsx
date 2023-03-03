@@ -84,7 +84,7 @@ const Home = () => {
         <div className="homecont__products">
           {productsToDisplay().length === 0 ? (
             <div className="nofoundbox">
-            <img className="nofound" src="../../img/nofound.png" />
+              <img className="nofound" src="../../img/nofound.png" />
             </div>
           ) : (
             productsToDisplay()

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCartItemThunk } from "../../utils/addCartItemThunk";
 import { updateCartQtyThunk } from "../../utils/updateCartQtyThunk";
 import { useNavigate } from "react-router-dom";
-import "./styles/ProductInfo.css"
+import "./styles/ProductInfo.css";
 
 const ProductInfo = ({ product }) => {
   const { cart } = useSelector((state) => state);
@@ -58,12 +58,15 @@ const ProductInfo = ({ product }) => {
           <span>$ {product?.price}</span>
         </section>
         <section>
-          
           <div className="handleopbox">
-          <h4>Quantity</h4>
-            <div onClick={handleminus}><i className='bx bx-minus-circle' ></i></div>
+            <h4>Quantity</h4>
+            <div onClick={handleminus}>
+              <i className="bx bx-minus-circle"></i>
+            </div>
             <div>{counter}</div>
-            <div onClick={handleAdd}><i className='bx bx-plus-circle' ></i></div>
+            <div onClick={handleAdd}>
+              <i className="bx bx-plus-circle"></i>
+            </div>
           </div>
         </section>
         <button onClick={handleAddOrUpdate}>

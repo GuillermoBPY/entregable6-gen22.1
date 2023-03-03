@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import defaultValues from "../utils/defaultValues";
 import { Link, useNavigate } from "react-router-dom";
-import "./styles/RegisterPage.css"
+import "./styles/RegisterPage.css";
 const RegisterPage = () => {
   const {
     handleSubmit,
@@ -176,11 +176,13 @@ const RegisterPage = () => {
           </div>
         </div>
         <div className="registerbtn__box">
-        <button>Register</button>
-        <div>
-          <span>Already have an account? </span>
-          <Link to="/user/login"><button> Log In</button></Link>
-        </div>
+          <button>Register</button>
+          <div>
+            <span>Already have an account? </span>
+            <Link to="/user/login">
+              <button> Log In</button>
+            </Link>
+          </div>
         </div>
       </form>
     </div>

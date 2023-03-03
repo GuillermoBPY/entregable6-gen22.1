@@ -11,10 +11,12 @@ const PurchaseCard = ({ purchase }) => {
         <header>
           <img src={product.images[0].url} alt="" />
         </header>
-        <div className="purchasecard__data"> 
-        <h3>{product.title}</h3>
-        <div>{quantity}UNT </div>
-        <div className="purchasecard__data--price">$ {quantity * Number(product.price)}</div>
+        <div className="purchasecard__data">
+          <h3>{product.title}</h3>
+          <div>{quantity}UNT </div>
+          <div className="purchasecard__data--price">
+            $ {quantity * Number(product.price)}
+          </div>
         </div>
       </article>
     </Link>

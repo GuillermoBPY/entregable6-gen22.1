@@ -44,11 +44,11 @@ const CartPage = () => {
       );
     } else {
       return (
-        <div className="cartpagecontainer" >
+        <div className="cartpagecontainer">
           <div className="carditemList">
-          {cart?.map((prodCart) => (
-            <CartItem key={prodCart.id} prodCart={prodCart} />
-          ))}
+            {cart?.map((prodCart) => (
+              <CartItem key={prodCart.id} prodCart={prodCart} />
+            ))}
           </div>
           <footer className="cartapage__footer">
             <h2>

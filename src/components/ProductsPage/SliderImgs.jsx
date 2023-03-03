@@ -33,29 +33,35 @@ const SliderImgs = ({ product }) => {
 
   return (
     <div className="carousel">
-    <div className="slider">
-      <button onClick={handlePrevius} className="sliderbx sliderbxleft">
-        <i className="bx bx-chevron-left"></i>
-      </button>
-      <div style={styleMovement} className="slider__movable">
-        {images?.map((image) => (
-          <div key={image.id} className="slider__container--img">
-            <img className="slider__img" src={image.url} alt={image.url} />
-          </div>
-        ))}
+      <div className="slider">
+        <button onClick={handlePrevius} className="sliderbx sliderbxleft">
+          <i className="bx bx-chevron-left"></i>
+        </button>
+        <div style={styleMovement} className="slider__movable">
+          {images?.map((image) => (
+            <div key={image.id} className="slider__container--img">
+              <img className="slider__img" src={image.url} alt={image.url} />
+            </div>
+          ))}
+        </div>
+        <button onClick={handleNext} className="sliderbx sliderbxright">
+          <i className="bx bx-chevron-right"></i>
+        </button>
+        <div className="slider__header"></div>
       </div>
-      <button onClick={handleNext} className="sliderbx sliderbxright">
-        <i className="bx bx-chevron-right"></i>
-      </button>
-      <div className="slider__header"></div>
-    </div>
-    <div className="carousel__footer">
-    {images?.map((image, index) => (
-          <div key={image.id} className={`carousel__container--img ${index === imgSelected && "active-img"}`} onClick={() => setimgSelected(index)}>
+      <div className="carousel__footer">
+        {images?.map((image, index) => (
+          <div
+            key={image.id}
+            className={`carousel__container--img ${
+              index === imgSelected && "active-img"
+            }`}
+            onClick={() => setimgSelected(index)}
+          >
             <img className="carousel__img" src={image.url} alt={image.url} />
           </div>
         ))}
-    </div>
+      </div>
     </div>
   );
 };

@@ -116,10 +116,10 @@ const LoginPage = () => {
             <input {...register("password")} type="password" required></input>
           </div>
           <div className="btn__box">
-          <button>Log In!</button>
-          <Link to="/user/register">
-            <button>Or go to register!</button>
-          </Link>
+            <button>Log In!</button>
+            <Link to="/user/register">
+              <button>Or go to register!</button>
+            </Link>
           </div>
         </form>
       </div>

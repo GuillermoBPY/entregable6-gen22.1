@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import PurchaseCard from "../components/PurchasesPage/PurchaseCard";
 import LoadingPage from "../components/shared/LoadingPage";
 import config from "../store/slices/getConfig";
-import "./styles/Purchases.css"
+import "./styles/Purchases.css";
 
 const Purchases = () => {
   const [purchases, setpurchases] = useState();

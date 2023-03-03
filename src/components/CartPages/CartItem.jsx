@@ -42,8 +42,8 @@ const CartItem = ({ prodCart }) => {
           </ul>
         </footer>
         <button className="deletebtn" onClick={handleDelete}>
-            <i className="bx bxs-trash"></i>
-          </button>
+          <i className="bx bxs-trash"></i>
+        </button>
       </article>
     </Link>
   );
