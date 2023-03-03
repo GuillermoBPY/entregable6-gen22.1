@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import defaultValues from "../utils/defaultValues";
 import "./styles/LoginPage.css";
 import Swal from "sweetalert2";
+import { getCartThunk } from "../store/slices/cart.slice";
+import { useDispatch } from "react-redux";
 const LoginPage = () => {
   const { register, handleSubmit, reset } = useForm();
   const [userdata, setuserdata] = useState();
   const [userRegisterDate, setuserRegisterDate] = useState();
+ const dispatch =  useDispatch()
 
   const submit = (data) => {
     const url = "https://e-commerce-api-v2.academlo.tech/api/v1/users/login";
@@ -18,6 +21,7 @@ const LoginPage = () => {
         res;
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
+        dispatch(getCartThunk())
         reset(defaultValues);
       })
       .catch((err) => {
