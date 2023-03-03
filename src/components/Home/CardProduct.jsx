@@ -26,7 +26,7 @@ const CardProduct = ({ product }) => {
     e.preventDefault();
     if (!cartItemID && cart) {
       dispatch(addCartItemThunk(product.id));
-    } else if (cart) {
+    } else if (cart && localStorage.getItem("token")) {
       dispatch(updateCartQtyThunk(cartItemID, 1, cartItemQty));
     } else {
       return navigate("/user/login");
