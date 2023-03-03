@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import PurchaseCard from "../components/PurchasesPage/PurchaseCard";
 import LoadingPage from "../components/shared/LoadingPage";
 import config from "../store/slices/getConfig";
 import "./styles/Purchases.css";
 
 const Purchases = () => {
+  const {cart} =  useSelector(state => state)
   const [purchases, setpurchases] = useState();
 
   const getPurchases = () => {
@@ -15,7 +17,9 @@ const Purchases = () => {
       .then((res) => setpurchases(res.data))
       .catch((err) => err);
   };
-  useEffect(getPurchases, []);
+
+  console.log(purchases)
+  useEffect(getPurchases, [cart]);
   if (!purchases) {
     return <LoadingPage />;
   } else {
