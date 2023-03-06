@@ -18,6 +18,7 @@ const LoginPage = () => {
         res;
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
+        location.reload();
         reset(defaultValues);
       })
       .catch((err) => {
@@ -46,6 +47,7 @@ const LoginPage = () => {
   const handleclick = () => {
     localStorage.clear();
     reset();
+    location.reload();
   };
 
   useEffect(() => {
@@ -55,49 +57,56 @@ const LoginPage = () => {
   useEffect(getDate, [userdata]);
 
   if (localStorage.getItem("token")) {
-    return (
-      <div className="loginpage__container">
-        <div className="loginpage__login">
-          <img src="../../img/userlogin.png" alt="" />
-          <h2>{` Welcome ${userdata?.firstName}!`}</h2>
-          <ul>
-            <li>
-              <span>
-                <i className="bx bx-id-card"></i>:
-              </span>
-              <span>#{userdata?.id}</span>
-            </li>
-            <li>
-              <span>
-                <i className="bx bx-user-circle"></i>:
-              </span>
-              <span>{`${userdata?.firstName} ${userdata?.lastName}`}</span>
-            </li>
-            <li>
-              <span>
-                <i className="bx bx-envelope"></i>:
-              </span>
-              <span>{userdata?.email}</span>
-            </li>
-            <li>
-              <span>
-                <i className="bx bx-phone"></i>:
-              </span>
-              <span>{userdata?.phone}</span>
-            </li>
-            <li>
-              <span>
-                <i className="bx bx-calendar-check"></i>:{" "}
-              </span>
-              <span>{userRegisterDate}</span>
-            </li>
-          </ul>
-          <button className="loginpage_btn" onClick={handleclick}>
-            Log Out
-          </button>
+    if (!userdata) {
+      return (
+        <div className="loginpage__container">
+          <img src="../../img/loading.gif" alt="" />
         </div>
-      </div>
-    );
+      );
+    } else
+      return (
+        <div className="loginpage__container">
+          <div className="loginpage__login">
+            <img src="../../img/userlogin.png" alt="" />
+            <h2>{` Welcome ${userdata?.firstName}!`}</h2>
+            <ul>
+              <li>
+                <span>
+                  <i className="bx bx-id-card"></i>:
+                </span>
+                <span>#{userdata?.id}</span>
+              </li>
+              <li>
+                <span>
+                  <i className="bx bx-user-circle"></i>:
+                </span>
+                <span>{`${userdata?.firstName} ${userdata?.lastName}`}</span>
+              </li>
+              <li>
+                <span>
+                  <i className="bx bx-envelope"></i>:
+                </span>
+                <span>{userdata?.email}</span>
+              </li>
+              <li>
+                <span>
+                  <i className="bx bx-phone"></i>:
+                </span>
+                <span>{userdata?.phone}</span>
+              </li>
+              <li>
+                <span>
+                  <i className="bx bx-calendar-check"></i>:{" "}
+                </span>
+                <span>{userRegisterDate}</span>
+              </li>
+            </ul>
+            <button className="loginpage_btn" onClick={handleclick}>
+              Log Out
+            </button>
+          </div>
+        </div>
+      );
   } else {
     return (
       <div className="loginpage__userlogin">
